@@ -1,46 +1,48 @@
 #include "Bureaucrat.hpp"
 #include <string>
 #include <iostream>
+#define RED "\033[0;31m"
+#define OFF "\033[0m"
 
 int main (void)
 {
-	std::cout << "**Burocrate da 148 a 151" << std::endl;
+	std::cout << RED << "**Burocrate da 148 a 151" << OFF << std::endl;
 	try
 	{
-		Bureaucrat *b = new Bureaucrat("Mario", 148);
-		std::cout << *b;
-		b->decrementGrade();
-		std::cout << *b;
-		b->decrementGrade();
-		std::cout << *b;
-		b->decrementGrade();
-		std::cout << *b;
+		Bureaucrat b = Bureaucrat("Mario", 148);
+		std::cout << b;
+		b.decrementGrade();
+		std::cout << b;
+		b.decrementGrade();
+		std::cout << b;
+		b.decrementGrade();
+		std::cout << b;
 	}
 	catch(std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "**Burocrate -1" << std::endl;
+	std::cout << RED << "**Burocrate da -1" << OFF << std::endl;
 	try
 	{
-		Bureaucrat *b = new Bureaucrat("Mario", -1);
-		std::cout << *b;
+		Bureaucrat b = Bureaucrat("Mario", -1);
+		std::cout << b;
 	}
 	catch(std::exception& e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "**Burocrate da 2 a 0" << std::endl;
+	std::cout << RED << "**Burocrate da 2 a 0" << OFF << std::endl;
 	try
 	{
-		Bureaucrat *b = new Bureaucrat("Mario", 2);
-		std::cout << *b;
-		b->incrementGrade();
-		std::cout << *b;
-		b->incrementGrade();
-		std::cout << *b;
+		Bureaucrat b = Bureaucrat("Mario", 2);
+		std::cout << b;
+		b.incrementGrade();
+		std::cout << b;
+		b.incrementGrade();
+		std::cout << b;
 	}
 	catch(std::exception& e)
 	{
