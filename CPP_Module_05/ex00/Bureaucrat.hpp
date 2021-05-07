@@ -15,9 +15,9 @@ class Bureaucrat
 		/* Destructor */
 		~Bureaucrat();
 		/* Copy Constructor */
-		Bureaucrat(Bureaucrat const &other);
+		Bureaucrat(const Bureaucrat &other);
         /* Operation overload = */
-		Bureaucrat &operator = (Bureaucrat const &other);
+		Bureaucrat &operator = (const Bureaucrat &other);
 		/* Other */ 
 		std::string getName(void) const;
 		int getGrade(void) const;
@@ -40,4 +40,4 @@ class Bureaucrat
 		};
 };
 
-std::ostream& operator << (std::ostream &output, Bureaucrat const &obj);
+std::ostream& operator << (std::ostream &output, const Bureaucrat &obj);

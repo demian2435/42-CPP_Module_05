@@ -7,7 +7,7 @@ class Bureaucrat;
 
 class Form
 {
-	private:
+	protected:
 		const std::string name;
 		int gradeForSign;
 		int gradeForExecute;
@@ -18,7 +18,7 @@ class Form
 		/* Constructor */
 		Form(std::string name, int gradeForSign, int gradeForExecute);
 		/* Destructor */
-		~Form();
+		virtual ~Form();
 		/* Copy Constructor */
 		Form(const Form &other);
         /* Operation overload = */
@@ -29,6 +29,7 @@ class Form
 		int getGradeForExecute(void) const;
 		bool getSigned(void) const;
 		void beSigned(const Bureaucrat b);
+		virtual void execute(const Bureaucrat& executor) const = 0;
 		/* Exception */
 		struct GradeTooHighException : public std::exception
 		{
