@@ -31,15 +31,17 @@ class Form
 		void beSigned(const Bureaucrat b);
 		virtual void execute(const Bureaucrat& executor) const = 0;
 		/* Exception */
-		struct GradeTooHighException : public std::exception
+		class GradeTooHighException : public std::exception
 		{
+			public:
 			const char * what () const throw ()
 			{
 				return "Exception: Form grade too high";
 			}
 		};
-		struct GradeTooLowException : public std::exception
+		class GradeTooLowException : public std::exception
 		{
+			public:
 			const char * what () const throw ()
 			{
 				return "Exception: Form grade too low";

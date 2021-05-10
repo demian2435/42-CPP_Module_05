@@ -29,15 +29,17 @@ class Bureaucrat
 		void signForm(Form &f) const;
 		void executeForm(const Form &form);
 		/* Exception */
-		struct GradeTooHighException : public std::exception
+		class GradeTooHighException : public std::exception
 		{
+			public:
 			const char * what () const throw ()
 			{
 				return "Exception: Bureaucrat grade too high";
 			}
 		};
-		struct GradeTooLowException : public std::exception
+		class GradeTooLowException : public std::exception
 		{
+			public:
 			const char * what () const throw ()
 			{
 				return "Exception: Bureaucrat grade too low";

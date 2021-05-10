@@ -19,8 +19,6 @@ Form &Form::operator = (const Form &other)
 	if (this != &other)
 	{
 		this->isSigned = other.isSigned;
-		this->gradeForSign = other.gradeForSign;
-		this->gradeForExecute = other.gradeForExecute;
 	}
 	return (*this);
 }

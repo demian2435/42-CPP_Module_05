@@ -9,8 +9,8 @@ class Form
 {
 	private:
 		const std::string name;
-		int gradeForSign;
-		int gradeForExecute;
+		const int gradeForSign;
+		const int gradeForExecute;
 		bool isSigned;
 		/* Default Constructor */
 		Form() : name("empty"), gradeForSign(150), gradeForExecute(150), isSigned(false) {}
@@ -30,15 +30,17 @@ class Form
 		bool getSigned(void) const;
 		void beSigned(const Bureaucrat b);
 		/* Exception */
-		struct GradeTooHighException : public std::exception
+		class GradeTooHighException : public std::exception
 		{
+			public:
 			const char * what () const throw ()
 			{
 				return "Exception: Form grade too high";
 			}
 		};
-		struct GradeTooLowException : public std::exception
+		class GradeTooLowException : public std::exception
 		{
+			public:
 			const char * what () const throw ()
 			{
 				return "Exception: Form grade too low";
