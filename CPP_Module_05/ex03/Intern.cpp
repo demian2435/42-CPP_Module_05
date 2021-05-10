@@ -32,5 +32,7 @@ Form *Intern::makeForm(std::string type, std::string target) const
     }
     if (!result)
         std::cout << "Form not found" << std::endl;
+    else
+        std::cout << "Intern creates " << type << std::endl;
     return result;
 }
